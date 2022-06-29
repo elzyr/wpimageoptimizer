@@ -35,6 +35,8 @@ def optimize(path):
             print('zmniejszyłem wage pliku o ' + zdjecie + " o " + str(roznica_wag)+ "%")
             image.save(zdjecie, optimize=True, quality=90)
 
+    os.system('optimize-images '+path)
+
     print('\nkoniec, folder jest lzejszy o: ' + str(round((size_przed - oblicz_wage(path)) * pow(10, -6),2)) + "MB ("+str(round((1-(oblicz_wage(path)/size_przed))*100,2))+"%)")
 
     shutil.rmtree('tempfolder', ignore_errors=True)
